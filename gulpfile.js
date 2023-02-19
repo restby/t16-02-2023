@@ -32,6 +32,8 @@ const webpackStream = require('webpack-stream');
 const plumber = require('gulp-plumber');
 const path = require('path');
 const zip = require('gulp-zip');
+const ttf2woff2 = require('gulp-ttf2woff2');
+const fonter = require('gulp-fonter-2');
 const rootFolder = path.basename(path.resolve());
 
 // paths
@@ -48,7 +50,34 @@ const paths = {
   buildJsFolder: `${buildFolder}/js`,
   srcPartialsFolder: `${srcFolder}/partials`,
   resourcesFolder: `${srcFolder}/resources`,
+  fontsFolder: `${srcFolder}/resources/fonts`,
+  otherFonts: `${srcFolder}/resources/fonts/**/*.{otf,eot}`,
+  fontsTtf: `${srcFolder}/resources/fonts/**/*.ttf`
 };
+
+// FontConvert
+const tottf = () => {
+  return src(paths.otherFonts)
+    .pipe(
+      fonter({
+        formats: ['ttf'],
+      })
+    )
+    .pipe(dest(paths.fontsFolder));
+}
+const towoff2 = () => {
+  return src(paths.fontsTtf)
+    .pipe(ttf2woff2())
+    .pipe(dest(paths.fontsFolder));
+}
+const cleanFonts = () => {
+  return del([paths.otherFonts, paths.fontsTtf])
+}
+// const towoff = () => {
+//   return gulp.src('source/fonts/**/*.ttf')
+//     .pipe(ttf2woff())
+//     .pipe(gulp.dest('source/fonts'));
+// }
 
 let isProd = false; // dev by default
 
@@ -267,8 +296,8 @@ const watchFiles = () => {
 
 const cache = () => {
   return src(`${buildFolder}/**/*.{css,js,svg,png,jpg,jpeg,webp,woff2}`, {
-      base: buildFolder
-    })
+    base: buildFolder
+  })
     .pipe(rev())
     .pipe(revDel())
     .pipe(dest(buildFolder))
@@ -325,3 +354,6 @@ exports.build = series(toProd, clean, htmlInclude, scripts, styles, resources, i
 exports.cache = series(cache, rewrite);
 
 exports.zip = zipFiles;
+
+exports.fontConvert = series(
+  tottf, towoff2, cleanFonts);
