@@ -1,4 +1,6 @@
 // если вы хотите использовать sass-переменные - удалите root
+$font-color: rgba(#141024, 0.7);
+
 // colors
 :root {
   // base
@@ -12,6 +14,5 @@
   // colors
   --light-color: #ffffff;
   --dark-color: #141024;
-  --text-color: rgba(#141024, 0.7);
   --accept-color: #D52027;
 }
