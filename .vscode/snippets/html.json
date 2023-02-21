@@ -121,7 +121,7 @@
     "prefix": "g-tooltip",
     "body": [
       "<span class=\"tooltip\">",
-      "  <button class=\"tooltip__btn\" aria-describedby=\"$1\">$2</button>",
+      "  <button class=\"btn-reset tooltip__btn\" aria-describedby=\"$1\">$2</button>",
       "  <span class=\"tooltip__txt\" role=\"tooltip\" id=\"$1\">",
       "    <span class=\"visually-hidden\">Тултип: </span>",
       "    $3",
