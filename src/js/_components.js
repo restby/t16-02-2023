@@ -1,2 +1,2 @@
-import "../js/components/_smooth-scroll";
-import "../js/components/_tooltip";
+import "../js/components/smooth-scroll";
+import "../js/components/tooltip";
