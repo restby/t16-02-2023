@@ -1,0 +1,5 @@
+.trainers {
+  &__wrapper {
+    padding-left: max(15px, calc((100% - var(--content-width)) / 2));
+  }
+}
