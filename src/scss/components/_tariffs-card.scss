@@ -1,0 +1,81 @@
+.tariffs-card {
+  &--current {
+    background-color: var(--dark-color);
+    border: var(--dark-color);
+    transform: scale(1.1);
+
+    .tariffs-card__title {
+      color: var(--light-color);
+
+      &::before,
+      &::after {
+        background-color: var(--light-color);
+      }
+    }
+
+    .tariffs-card__price {
+      color: var(--light-color);
+    }
+
+    .tariffs-card__descr {
+      color: var(--light-color);
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin: 0;
+    margin-bottom: 63px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 160%;
+    color: var(--dark-color);
+    text-align: center;
+
+    &::before,
+    &::after {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 19px;
+      height: 3px;
+      background-color: var(--dark-color);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      left: 0;
+      transform: translateX(-32px);
+    }
+
+    &::after {
+      right: 0;
+      transform: translateX(32px);
+    }
+  }
+
+  &__price {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 160%;
+    color: var(--dark-color);
+    text-align: center;
+  }
+
+  &__descr {
+    margin: 0;
+    margin-bottom: auto;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+    color: var(--dark-color);
+    text-align: center;
+  }
+
+  &__btn {
+    margin-top: 61px;
+    min-width: 100%;
+  }
+}

@@ -1,0 +1,43 @@
+.order {
+  padding-top: 87px;
+  padding-bottom: 87px;
+  background-color: var(--accept-color);
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  &__left {
+    padding-left: 60px;
+    grid-column: 5 span;
+  }
+
+  &__right {
+    grid-column: 7 span;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 60px;
+  }
+
+  &__hero {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 130%;
+    color: var(--light-color);
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 130%;
+    color: var(--light-color);
+  }
+
+  &__form {
+    max-width: 500px;
+  }
+}

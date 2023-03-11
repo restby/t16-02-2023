@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--accept-color);
+  background-color: var(--accept-color);
   border-radius: 5px;
   padding: 25px 30px;
   min-width: 260px;
@@ -11,4 +11,8 @@
   line-height: 160%;
   text-align: center;
   color: var(--light-color);
+
+  &--dark {
+    background-color: var(--dark-color);
+  }
 }
