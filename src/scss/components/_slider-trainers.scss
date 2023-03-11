@@ -6,7 +6,7 @@
     height: 34px;
     position: relative;
     border-radius: 50%;
-    background-color: #230B34;
+    background-color: #141024;
 
     &--prev {
 
@@ -60,6 +60,15 @@
 
     &:not(:last-child) {
       margin-right: 16px;
+    }
+
+    &:hover {
+      background-color: #230B34;
+    }
+
+    &:focus {
+      outline: none;
+      background-color: #230B34;
     }
   }
 }

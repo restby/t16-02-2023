@@ -1,4 +1,11 @@
 .trainers {
+  padding-top: 120px;
+  padding-bottom: 120px;
+
+  &__title {
+    margin-bottom: 60px;
+  }
+
   &__wrapper {
     padding-left: max(15px, calc((100% - var(--content-width)) / 2));
   }
@@ -9,6 +16,14 @@
 
   .swiper-slide {
     width: 360px;
+  }
+
+  &__scroll.swiper-scrollbar {
+    background-color: rgba(20, 16, 36, 0.08);
+  }
+
+  .swiper-scrollbar-drag {
+    background-color: var(--dark-color);
   }
 
   &__card-title {

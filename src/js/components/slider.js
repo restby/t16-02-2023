@@ -7,4 +7,8 @@ const swiper = new Swiper('.trainers__content', {
     el: '.trainers__scroll',
     draggable: true,
   },
+  navigation: {
+    nextEl: '.slider-trainers__btn--next',
+    prevEl: '.slider-trainers__btn--prev',
+  },
 });
