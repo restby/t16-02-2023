@@ -1,7 +1,28 @@
 .footer {
-  display: flex;
-  justify-content: space-between;
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: var(--dark-color);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__logo {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  &__small {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    color: rgba(255, 255, 255, 0.7);
+  }
 }
